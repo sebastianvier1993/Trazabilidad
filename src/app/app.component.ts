@@ -40,16 +40,6 @@ export class AppComponent implements OnInit {
     this.getEmployeeList();
   }
 
-  openAddEditEmployeeDialog() {
-    const dialogRef = this.dialog.open(EmpAddEditComponent);
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if (val) {
-          this.getEmployeeList();
-        }
-      },
-    });
-  }
 
   getEmployeeList() {
     this.empService.getEmployeeList().subscribe({
@@ -65,41 +55,4 @@ export class AppComponent implements OnInit {
     });
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
-  deleteEmployee(id: number) {
-    let confirm = window.confirm("Do you want to delete this employee?");
-    if(confirm) {
-      this.empService.deleteEmployee(id).subscribe({
-        next: (res) => {
-          alert('Employee deleted!');
-          this.getEmployeeList();
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
-    }
-  }
-
-  openEditForm(data: any) {
-    const dialogRef = this.dialog.open(EmpAddEditComponent, {
-      data,
-    });
-
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if (val) {
-          this.getEmployeeList();
-        }
-      }
-    });
-  }
 }
