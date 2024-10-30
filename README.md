@@ -1,10 +1,14 @@
-# Myapp
+# SimpleEmployeeManagementCrudApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+
+## Install Dependency
+Run     `npm install` to install all the dependencies.
 
 ## Development server
+Run `ng serve -o` for a dev server. You will be redirected to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Open another terminal tab and run  `json-server --watch db.json` for starting the mock json database. This will start a local server at `http://localhost:3000/`.
 
 ## Code scaffolding
 
@@ -24,4 +28,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
